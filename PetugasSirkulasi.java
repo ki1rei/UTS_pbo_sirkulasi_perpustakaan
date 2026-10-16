@@ -10,6 +10,12 @@ public class PetugasSirkulasi {
     }
 
     public void cetakDenda(Koleksi k) {
+        // Guard clause: referensi null
+        if (k == null) {
+            System.out.println("Koleksi tidak boleh null.");
+            return;
+        }
+
         String namaPeminjam = k.getPeminjam() == null
                 ? "Belum dipinjam"
                 : k.getPeminjam().getNama();

@@ -14,6 +14,14 @@ public class Rak {
     }
 
     public boolean tambahKoleksi(Koleksi k) {
+        // Guard clause: referensi null
+        if (k == null) {
+            System.out.println(
+                    "Koleksi tidak boleh null! Gagal disimpan ke rak " + kode + ".");
+            return false;
+        }
+
+        // Guard clause: kapasitas rak penuh
         if (isPenuh()) {
             System.out.println(
                     "Rak " + kode + " sudah penuh! Koleksi "

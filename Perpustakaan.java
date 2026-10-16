@@ -18,10 +18,21 @@ public class Perpustakaan {
     }
 
     public void setKepala(Pustakawan p) {
+        // Guard clause: referensi null
+        if (p == null) {
+            System.out.println("Pustakawan tidak boleh null.");
+            return;
+        }
         this.kepala = p;
     }
 
     public void simpanKoleksi(Koleksi k) {
+        // Guard clause: referensi null
+        if (k == null) {
+            System.out.println("Koleksi tidak boleh null.");
+            return;
+        }
+
         for (Rak rak : daftarRak) {
             if (!rak.isPenuh()) {
                 rak.tambahKoleksi(k);
@@ -35,9 +46,15 @@ public class Perpustakaan {
     }
 
     public void simpanKoleksi(Koleksi k, int nomorRak) {
+        // Guard clause: referensi null
+        if (k == null) {
+            System.out.println("Koleksi tidak boleh null.");
+            return;
+        }
+
+        // Guard clause: indeks array tidak valid
         if (nomorRak < 1 || nomorRak > daftarRak.length) {
-            System.out.println(
-                    "Nomor rak " + nomorRak + " tidak valid!");
+            System.out.println("Nomor rak " + nomorRak + " tidak valid!");
             return;
         }
 
