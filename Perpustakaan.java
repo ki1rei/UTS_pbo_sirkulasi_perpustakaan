@@ -6,8 +6,7 @@ public class Perpustakaan {
     public Perpustakaan(String nama, int jumlahRak) {
         if (jumlahRak < 1) {
             throw new IllegalArgumentException(
-                "Jumlah rak minimal 1."
-            );
+                    "Jumlah rak minimal 1.");
         }
 
         this.nama = nama;
@@ -31,16 +30,14 @@ public class Perpustakaan {
         }
 
         System.out.println(
-            "Semua rak penuh! Koleksi "
-            + k.getKode() + " gagal disimpan."
-        );
+                "Semua rak penuh! Koleksi "
+                        + k.getKode() + " gagal disimpan.");
     }
 
     public void simpanKoleksi(Koleksi k, int nomorRak) {
         if (nomorRak < 1 || nomorRak > daftarRak.length) {
             System.out.println(
-                "Nomor rak " + nomorRak + " tidak valid!"
-            );
+                    "Nomor rak " + nomorRak + " tidak valid!");
             return;
         }
 
@@ -50,17 +47,15 @@ public class Perpustakaan {
     public void tampilInfo() {
         System.out.println("Perpustakaan: " + nama);
         System.out.println(
-            "Kepala: " +
-            (kepala == null ? "Belum ditentukan" : kepala.getNama())
-        );
+                "Kepala: " +
+                        (kepala == null ? "Belum ditentukan" : kepala.getNama()));
 
         System.out.println("Daftar Rak:");
 
         for (Rak rak : daftarRak) {
             System.out.println(
-                rak.getKode() + " - " +
-                (rak.isPenuh() ? "Penuh" : "Belum penuh")
-            );
+                    rak.getKode() + " - " +
+                            (rak.isPenuh() ? "Penuh" : "Belum penuh"));
         }
     }
 }

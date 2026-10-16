@@ -30,8 +30,7 @@ public abstract class Koleksi {
     public void setHariTerlambat(int hari) {
         if (hari < 0) {
             throw new IllegalArgumentException(
-                "Hari terlambat tidak boleh negatif."
-            );
+                    "Hari terlambat tidak boleh negatif.");
         }
         this.hariTerlambat = hari;
     }

@@ -16,9 +16,8 @@ public class Rak {
     public boolean tambahKoleksi(Koleksi k) {
         if (isPenuh()) {
             System.out.println(
-                "Rak " + kode + " sudah penuh! Koleksi "
-                + k.getKode() + " gagal disimpan."
-            );
+                    "Rak " + kode + " sudah penuh! Koleksi "
+                            + k.getKode() + " gagal disimpan.");
             return false;
         }
 
