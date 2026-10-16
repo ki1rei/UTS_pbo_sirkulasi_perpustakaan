@@ -3,12 +3,10 @@ public class MainVarian2 {
     public static void main(String[] args) {
 
         // Membuat perpustakaan dengan 2 rak
-        Perpustakaan perpustakaan =
-                new Perpustakaan("Perpustakaan Polinema", 2);
+        Perpustakaan perpustakaan = new Perpustakaan("Perpustakaan Polinema", 2);
 
         // Membuat kepala perpustakaan
-        Pustakawan kepala =
-                new Pustakawan("P-01", "Bu Dewi");
+        Pustakawan kepala = new Pustakawan("P-01", "Bu Dewi");
 
         perpustakaan.setKepala(kepala);
 
@@ -18,16 +16,13 @@ public class MainVarian2 {
 
         // Membuat koleksi buku dan majalah
         Buku b1 = new Buku(
-                "B-01", "Pemrograman Java", "Abdul Kadir"
-        );
+                "B-01", "Pemrograman Java", "Abdul Kadir");
 
         Buku b2 = new Buku(
-                "B-02", "Struktur Data", "Rinaldi"
-        );
+                "B-02", "Struktur Data", "Rinaldi");
 
         Majalah m1 = new Majalah(
-                "M-01", "Info Komputer", "Mei 2026"
-        );
+                "M-01", "Info Komputer", "Mei 2026");
 
         // Mengatur peminjam dan hari keterlambatan
         b1.setPeminjam(a1);
@@ -48,8 +43,7 @@ public class MainVarian2 {
         perpustakaan.tampilInfo();
 
         // Membuat petugas sirkulasi
-        PetugasSirkulasi petugas =
-                new PetugasSirkulasi("Petugas 1");
+        PetugasSirkulasi petugas = new PetugasSirkulasi("Petugas 1");
 
         // Mencetak rincian denda ketiga koleksi
         System.out.println("\n=== RINCIAN DENDA ===");
@@ -57,5 +51,16 @@ public class MainVarian2 {
         petugas.cetakDenda(b1);
         petugas.cetakDenda(b2);
         petugas.cetakDenda(m1);
+
+        // Jawaban C3
+
+        Koleksi k = new Majalah("M-09", "Tempo", "Juni 2026");
+
+        k.setHariTerlambat(6);
+
+        System.out.println("\n=== Jawaban C3 ===");
+        System.out.println("Jenis: " + k.getJenis());
+        System.out.println("Denda: " + k.hitungDenda());
+
     }
 }
